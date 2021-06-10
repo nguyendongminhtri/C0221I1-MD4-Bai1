@@ -11,13 +11,13 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Configuration
 @ComponentScan("controller") //Scan den thu muc con troller
 public class WebConfig implements WebMvcConfigurer {
-
     @Bean
     InternalResourceViewResolver resolver(){
         System.out.println("GOI WebConfig");
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
         resolver.setPrefix("/view"); //tuong ứng config xuống webapp/view
         resolver.setSuffix(".jsp");
+       resolver.setContentType("charset=UTF-8");
         return resolver;
     }
 }

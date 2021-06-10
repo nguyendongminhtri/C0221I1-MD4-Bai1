@@ -1,7 +1,8 @@
 package config;
 
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-
+import javax.servlet.Filter;
 public class AppConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
     public void String(){
         System.out.println("Có luồng chạy vào đây không");
@@ -22,5 +23,12 @@ public class AppConfig extends AbstractAnnotationConfigDispatcherServletInitiali
     protected String[] getServletMappings() {
         System.out.println("Luong chay thu 3");
         return new String[]{"/"};
+    }
+    @Override
+    protected Filter[] getServletFilters() {
+        CharacterEncodingFilter filter = new CharacterEncodingFilter();
+        filter.setForceEncoding(true);
+        filter.setEncoding("UTF-8");
+        return new Filter[]{filter};
     }
 }

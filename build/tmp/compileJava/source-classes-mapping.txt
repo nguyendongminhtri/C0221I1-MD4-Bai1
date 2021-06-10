@@ -1,6 +1,6 @@
-controller/HomeController.java
- controller.HomeController
-config/WebConfig.java
- config.WebConfig
 config/AppConfig.java
  config.AppConfig
+config/WebConfig.java
+ config.WebConfig
+controller/HomeController.java
+ controller.HomeController
